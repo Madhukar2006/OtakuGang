@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OtakuGang | Premium Minecraft SMP</title>
+    <link href="https://fonts.googleapis.com/css2?family=VT323&family=Lexend:wght@300;600&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        :root {
+            --emerald: #2ecc71;
+            --deep-slate: #1a1a1b;
+            --netherite: #2c2c2e;
+            --gold: #ffcc00;
+            --diamond: #3498db;
+            --discord: #5865F2;
+            --crimson: #e74c3c;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        body {
+            background-color: #0f0f10;
+            color: white;
+            font-family: 'Lexend', sans-serif;
+            overflow-x: hidden;
+        }
+
+        .mc-font { font-family: 'VT323', monospace; text-transform: uppercase; }
+
+        /* --- Animations --- */
+        .reveal { opacity: 0; transform: translateY(30px); transition: all 0.8s ease-out; }
+        .reveal.active { opacity: 1; transform: translateY(0); }
+
+        /* --- Hero Section --- */
+        .hero {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            border-bottom: 4px solid var(--emerald);
+        }
+
+        .hero-bg-image {
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: url('https://wallpapers.com/images/hd/minecraft-villages-5760-x-3240-wallpaper-bpao1a4f582fgzvh.jpg');
+            background-size: cover;
+            background-position: center;
+            z-index: -1;
+            animation: slowZoom 20s infinite alternate ease-in-out;
+        }
+
+        @keyframes slowZoom { from { transform: scale(1); } to { transform: scale(1.1); } }
+
+        .hero-overlay {
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: radial-gradient(circle, rgba(0,0,0,0.1) 0%, rgba(0,0,0,0.8) 100%);
+            z-index: 0;
+        }
+
+        .hero-content { position: relative; z-index: 1; animation: fadeInDown 1.2s ease-out; }
+
+        @keyframes fadeInDown {
+            from { opacity: 0; transform: translateY(-30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .title { font-size: 6.5rem; color: var(--emerald); text-shadow: 4px 4px 0px #000, 8px 8px 20px rgba(0,0,0,0.8); line-height: 1; margin-bottom: 10px; }
+        .subtitle { color: var(--gold); letter-spacing: 5px; font-size: 1.8rem; text-shadow: 2px 2px 4px #000; margin-bottom: 40px; }
+
+        /* --- Buttons --- */
+        .btn-container { display: flex; gap: 20px; justify-content: center; margin-top: 30px; flex-wrap: wrap; }
+        .ip-badge, .discord-btn {
+            padding: 18px 35px;
+            cursor: pointer;
+            transition: 0.3s;
+            display: inline-flex;
+            align-items: center;
+            gap: 15px;
+            font-size: 1.4rem;
+            color: white;
+            text-decoration: none;
+            border: 3px solid var(--emerald);
+            background: rgba(26, 26, 27, 0.85);
+            backdrop-filter: blur(5px);
+        }
+        .ip-badge { animation: pulseGlow 2s infinite; }
+        .discord-btn { background: rgba(88, 101, 242, 0.85); border-color: #5865F2; }
+        .discord-btn:hover { transform: scale(1.05); background: #5865F2; border-color: white; }
+        .ip-badge:hover { background: var(--emerald); color: black; animation: none; }
+
+        @keyframes pulseGlow {
+            0% { box-shadow: 0 0 0 0 rgba(46, 204, 113, 0.4); }
+            70% { box-shadow: 0 0 0 15px rgba(46, 204, 113, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(46, 204, 113, 0); }
+        }
+
+        /* --- Content Layout --- */
+        .container { max-width: 1200px; margin: auto; padding: 40px 20px; }
+        .heading-wrap { display: flex; align-items: center; gap: 20px; margin: 80px 0 40px; }
+        .heading-line { height: 4px; flex-grow: 1; background: var(--netherite); border-radius: 2px; }
+        .heading-text { font-size: 3.5rem; color: var(--emerald); }
+
+        /* --- Rules Section --- */
+        .rules-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 20px; }
+        .rule-card {
+            background: rgba(255, 255, 255, 0.03);
+            border-left: 4px solid var(--emerald);
+            padding: 25px;
+            display: flex;
+            align-items: flex-start;
+            gap: 20px;
+            transition: 0.3s;
+        }
+        .rule-card:hover { background: rgba(255, 255, 255, 0.07); transform: translateX(10px); }
+        .rule-card i { color: var(--emerald); margin-top: 5px; }
+        .rule-card h3 { font-size: 1.4rem; margin-bottom: 5px; color: white; }
+        .rule-card p { color: #aaa; font-size: 0.95rem; line-height: 1.4; }
+
+        /* --- Leadership & Members --- */
+        .leadership-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; }
+        .throne-card { background: linear-gradient(145deg, #1a1a1b, #252526); border: 4px solid var(--gold); padding: 40px; text-align: center; }
+        .throne-card.co-founder { border-color: var(--diamond); }
+        .leader-skin { height: 220px; image-rendering: pixelated; margin-bottom: 20px; transition: 0.5s; }
+        .throne-card:hover .leader-skin { transform: translateY(-15px); }
+
+        .member-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 25px; }
+        .member-card { background: #1e1e1e; border-bottom: 4px solid var(--emerald); padding: 25px 15px; text-align: center; transition: 0.3s; }
+        .member-card:hover { transform: translateY(-10px); background: #252525; }
+        .m-skin { height: 140px; image-rendering: pixelated; margin-bottom: 15px; }
+
+        footer { margin-top: 100px; padding: 60px; background: #0a0a0b; text-align: center; border-top: 2px solid #222; }
+        .footer-link { color: var(--discord); text-decoration: none; font-weight: bold; }
+        .footer-link:hover { text-decoration: underline; }
+        #toast { position: fixed; bottom: 30px; right: 30px; background: var(--emerald); color: black; padding: 15px 25px; border-radius: 4px; font-weight: bold; display: none; z-index: 9999; }
+
+        @media (max-width: 850px) {
+            .leadership-grid { grid-template-columns: 1fr; }
+            .title { font-size: 4rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <section class="hero">
+        <div class="hero-bg-image"></div>
+        <div class="hero-overlay"></div>
+        
+        <div class="hero-content">
+            <h1 class="title mc-font">OTAKU GANG</h1>
+            <p class="subtitle mc-font">Survival • Community • Anime</p>
+            
+            <div class="btn-container">
+                <div class="ip-badge mc-font" onclick="copyIP()">
+                    <i data-lucide="server"></i> 
+                    OtakuGang.enderman.cloud
+                </div>
+                <a href="https://discord.gg/rJrxsmfudH" target="_blank" class="discord-btn mc-font">
+                    <i data-lucide="message-circle"></i> Discord
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <div class="container">
+        
+        <div class="heading-wrap reveal">
+            <h2 class="heading-text mc-font">Server Laws</h2>
+            <div class="heading-line"></div>
+        </div>
+        
+        <div class="rules-grid">
+            <div class="rule-card reveal">
+                <i data-lucide="swords"></i>
+                <div>
+                    <h3 class="mc-font">Strict No-PvP Policy</h3>
+                    <p>Combat between players is strictly prohibited. We are a peaceful community focused on building and progression.</p>
+                </div>
+            </div>
+            <div class="rule-card reveal" style="transition-delay: 0.1s;">
+                <i data-lucide="package-search"></i>
+                <div>
+                    <h3 class="mc-font">Ownership Respect</h3>
+                    <p>Do not take items from others without explicit permission. Always ask before borrowing or trading resources.</p>
+                </div>
+            </div>
+            <div class="rule-card reveal" style="transition-delay: 0.2s;">
+                <i data-lucide="mic"></i>
+                <div>
+                    <h3 class="mc-font">Active Voice Comm</h3>
+                    <p>Keep your microphone active while playing. Communication is key to maintaining our gang's coordination.</p>
+                </div>
+            </div>
+            <div class="rule-card reveal" style="transition-delay: 0.3s;">
+                <i data-lucide="hand-helping"></i>
+                <div>
+                    <h3 class="mc-font">Mutual Support</h3>
+                    <p>Always extend a helping hand to fellow gang members. If someone is struggling with a build or resources, help them out.</p>
+                </div>
+            </div>
+            <div class="rule-card reveal" style="transition-delay: 0.4s;">
+                <i data-lucide="hammer"></i>
+                <div>
+                    <h3 class="mc-font">Zero Griefing Tolerance</h3>
+                    <p>Destroying or altering another player's structure will result in an immediate and permanent ban from the server.</p>
+                </div>
+            </div>
+            <div class="rule-card reveal" style="transition-delay: 0.5s;">
+                <i data-lucide="shield-alert"></i>
+                <div>
+                    <h3 class="mc-font">Anti-Cheat Protocol</h3>
+                    <p>The use of X-Ray, fly-hacks, or any 3rd party advantage is forbidden. Play fair and keep the economy balanced.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="heading-wrap reveal">
+            <h2 class="heading-text mc-font">The Administration</h2>
+            <div class="heading-line"></div>
+        </div>
+        <div class="leadership-grid">
+            <div class="throne-card reveal">
+                <img src="https://mc-heads.net/body/Madhukar2006" class="leader-skin">
+                <h2 class="mc-font" style="font-size: 2.5rem; color: var(--gold);">Madhukar2006</h2>
+                <p style="letter-spacing: 3px; color: #aaa;">FOUNDER & OWNER</p>
+            </div>
+            <div class="throne-card co-founder reveal" style="transition-delay: 0.2s;">
+                <img src="https://mc-heads.net/body/JatinShandilya" class="leader-skin">
+                <h2 class="mc-font" style="font-size: 2.5rem; color: var(--diamond);">JatinShandilya</h2>
+                <p style="letter-spacing: 3px; color: #aaa;">CO-FOUNDER & ADMIN</p>
+            </div>
+        </div>
+
+        <div class="heading-wrap reveal">
+            <h2 class="heading-text mc-font">Gang Members</h2>
+            <div class="heading-line"></div>
+        </div>
+        <div class="member-grid">
+            <div class="member-card reveal">
+                <img src="https://mc-heads.net/body/KrishnaTyagi" class="m-skin">
+                <p class="mc-font" style="color: var(--emerald);">KrishnaTyagi</p>
+                <p style="font-size: 0.7rem; color: #777;">ELITE MEMBER</p>
+            </div>
+        </div>
+
+    </div>
+
+    <footer>
+        <h2 class="mc-font" style="color: var(--emerald); font-size: 2rem;">OtakuGang SMP</h2>
+        <p style="margin: 10px 0; color: #777;">&copy; 2025 OtakuGang. Play Fair. Build Together.</p>
+        <p><a href="https://discord.gg/rJrxsmfudH" target="_blank" class="footer-link">Join our Discord Community</a></p>
+    </footer>
+
+    <div id="toast">IP Copied! See you in the game!</div>
+
+    <script>
+        lucide.createIcons();
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) entry.target.classList.add('active');
+            });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+        function copyIP() {
+            navigator.clipboard.writeText("OtakuGang.enderman.cloud");
+            const toast = document.getElementById('toast');
+            toast.style.display = 'block';
+            setTimeout(() => { toast.style.display = 'none'; }, 3000);
+        }
+    </script>
+</body>
+</html>
