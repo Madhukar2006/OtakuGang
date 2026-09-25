@@ -1,55 +1,94 @@
 # 🎮 OtakuGang SMP Website
 
-A premium landing website for **OtakuGang**, a Minecraft Survival Multiplayer server focused on community, anime vibes, and fair gameplay.
+<p align="center">
+  <img src="https://img.shields.io/badge/Minecraft-OtakuGang-5e5e5e?style=for-the-badge&logo=minecraft&logoColor=white" alt="Minecraft">
+  <img src="https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white" alt="HTML5">
+  <img src="https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white" alt="CSS3">
+  <img src="https://img.shields.io/badge/JavaScript-Vanilla-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black" alt="JavaScript">
+</p>
 
-This is a single-page responsive website built using **pure HTML, CSS, and JavaScript** with smooth animations and a Minecraft-inspired design.
+<p align="center">
+  A modern Minecraft SMP landing page built for the <strong>OtakuGang</strong> community.
+</p>
 
 ---
 
-## 🌐 Server Details
+## 🌌 About OtakuGang
 
-**Server IP**
+**OtakuGang SMP** is a Minecraft Survival Multiplayer community combining the creativity of Minecraft with the energy of anime culture.
 
+This repository contains the official-style landing website created to introduce the server, showcase its community, present server rules, and provide an easy way for players to join the Discord community.
 
-**Discord**
-https://discord.gg/rJrxsmfudH
+The website focuses on a clean Minecraft-inspired visual experience while remaining lightweight and easy to run.
 
 ---
 
 ## ✨ Features
 
-- Minecraft-inspired UI and typography  
-- Fullscreen hero section with animated background  
-- Copy-to-clipboard server IP with toast notification  
-- SMP rules section with clean icon layout  
-- Admin and leadership showcase with live Minecraft skins  
-- Member cards layout  
-- Smooth scroll reveal animations  
-- Fully responsive design  
-- No frameworks or build tools required  
+### 🎮 Minecraft-Inspired Design
+- Minecraft-style visual identity
+- Gaming-focused typography
+- Pixel-inspired UI elements
+- Dark immersive interface
+
+### 🌐 Responsive Website
+- Desktop friendly
+- Tablet support
+- Mobile responsive layout
+- Flexible sections and cards
+
+### 📋 Server Information
+- Server introduction
+- Server details section
+- Discord community link
+- Easy-to-access server information
+
+### 📋 Copy Server Information
+- Copy-to-clipboard functionality
+- Toast notification feedback
+- Simple interaction for players
+
+### 🛡️ Server Rules
+- Clean rules section
+- Easy-to-read rule cards
+- Community-focused guidelines
+
+### 👑 Community Showcase
+- Admin and leadership section
+- Member cards
+- Minecraft player skins
+- Community-oriented presentation
+
+### ✨ Animations
+- Smooth scrolling
+- Scroll reveal effects
+- Interactive UI elements
+- Toast notifications
 
 ---
 
-## 🛠 Tech Stack
+## 🛠️ Tech Stack
 
-- HTML5  
-- CSS3  
-- JavaScript (Vanilla)  
-- Google Fonts (VT323, Lexend)  
-- Lucide Icons  
-- mc-heads.net API (Minecraft skins)
+| Technology | Purpose |
+|------------|---------|
+| HTML5 | Website structure |
+| CSS3 | Styling and responsive design |
+| JavaScript | Interactions and animations |
+| Google Fonts | Custom typography |
+| Lucide Icons | Interface icons |
+| mc-heads.net API | Minecraft player skins |
+
+The project uses **vanilla HTML, CSS, and JavaScript**, so no framework or build system is required.
 
 ---
 
 ## 📁 Project Structure
 
-
-All styles and scripts are included inside `index.html` for simplicity.
-
----
-
-## 🚀 Run Locally
-
-1. Clone the repository
-   ```bash
-   git clone https://github.com/Madhukar2006/otakugang-smp-website.git
+```text
+OtakuGang/
+│
+├── index.html
+├── README.md
+├── CONTRIBUTING.md
+├── CODE_OF_CONDUCT.md
+└── LICENSE.md
