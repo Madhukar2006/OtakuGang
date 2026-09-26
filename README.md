@@ -1,94 +1,48 @@
-# 🎮 OtakuGang SMP Website
+# 🎮 OtakuGang
 
 <p align="center">
-  <img src="https://img.shields.io/badge/Minecraft-OtakuGang-5e5e5e?style=for-the-badge&logo=minecraft&logoColor=white" alt="Minecraft">
-  <img src="https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white" alt="HTML5">
-  <img src="https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white" alt="CSS3">
-  <img src="https://img.shields.io/badge/JavaScript-Vanilla-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black" alt="JavaScript">
+  <img src="https://img.shields.io/badge/Minecraft-SMP-2ea44f?style=for-the-badge&logo=minecraft&logoColor=white">
+  <img src="https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white">
+  <img src="https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white">
+  <img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black">
 </p>
 
 <p align="center">
-  A modern Minecraft SMP landing page built for the <strong>OtakuGang</strong> community.
+  <b>A Minecraft SMP community website built for OtakuGang.</b><br>
+  Minecraft • Anime • Gaming • Community
 </p>
 
 ---
 
-## 🌌 About OtakuGang
+## 🌌 About
 
-**OtakuGang SMP** is a Minecraft Survival Multiplayer community combining the creativity of Minecraft with the energy of anime culture.
+**OtakuGang** is a Minecraft Survival Multiplayer community website designed around a mix of **Minecraft aesthetics and anime-inspired vibes**.
 
-This repository contains the official-style landing website created to introduce the server, showcase its community, present server rules, and provide an easy way for players to join the Discord community.
-
-The website focuses on a clean Minecraft-inspired visual experience while remaining lightweight and easy to run.
+The website provides players with server information, community details, rules, and an easy way to join the OtakuGang community.
 
 ---
 
-## ✨ Features
+## ✨ Highlights
 
-### 🎮 Minecraft-Inspired Design
-- Minecraft-style visual identity
-- Gaming-focused typography
-- Pixel-inspired UI elements
-- Dark immersive interface
-
-### 🌐 Responsive Website
-- Desktop friendly
-- Tablet support
-- Mobile responsive layout
-- Flexible sections and cards
-
-### 📋 Server Information
-- Server introduction
-- Server details section
-- Discord community link
-- Easy-to-access server information
-
-### 📋 Copy Server Information
-- Copy-to-clipboard functionality
-- Toast notification feedback
-- Simple interaction for players
-
-### 🛡️ Server Rules
-- Clean rules section
-- Easy-to-read rule cards
-- Community-focused guidelines
-
-### 👑 Community Showcase
-- Admin and leadership section
-- Member cards
-- Minecraft player skins
-- Community-oriented presentation
-
-### ✨ Animations
-- Smooth scrolling
-- Scroll reveal effects
-- Interactive UI elements
-- Toast notifications
+- 🎮 Minecraft-inspired interface
+- 🌌 Dark gaming aesthetic
+- 📱 Fully responsive design
+- ⚡ Lightweight and fast
+- 📋 Server information
+- 🛡️ Community rules
+- 👑 Staff & member showcase
+- 📋 Copy-to-clipboard interaction
+- ✨ Smooth animations
+- 🌐 Discord community integration
 
 ---
 
-## 🛠️ Tech Stack
-
-| Technology | Purpose |
-|------------|---------|
-| HTML5 | Website structure |
-| CSS3 | Styling and responsive design |
-| JavaScript | Interactions and animations |
-| Google Fonts | Custom typography |
-| Lucide Icons | Interface icons |
-| mc-heads.net API | Minecraft player skins |
-
-The project uses **vanilla HTML, CSS, and JavaScript**, so no framework or build system is required.
-
----
-
-## 📁 Project Structure
+## 🛠️ Built With
 
 ```text
-OtakuGang/
-│
-├── index.html
-├── README.md
-├── CONTRIBUTING.md
-├── CODE_OF_CONDUCT.md
-└── LICENSE.md
+HTML5
+CSS3
+JavaScript
+Google Fonts
+Lucide Icons
+Minecraft Skin API
