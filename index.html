@@ -3,7 +3,6 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="OtakuGang is a gaming, anime, development and study community with a Java and Bedrock Minecraft SMP.">
 <title>OtakuGang — Gaming · Anime · Community</title>
 <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Rajdhani:wght@400;500;600;700&family=Exo+2:wght@300;400;600;700;900&display=swap" rel="stylesheet">
 <style>
@@ -36,7 +35,6 @@ nav.s{background:rgba(7,5,15,0.97);border-bottom-color:var(--p);}
 .nd:hover{background:transparent;border-color:var(--disc);color:var(--disc);}
 .ham{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:4px;}
 .ham span{display:block;width:22px;height:2px;background:var(--text);}
-.ham:focus-visible,.pill:focus-visible,.gadd:focus-visible,.sfv:focus-visible,a:focus-visible{outline:2px solid var(--gold);outline-offset:4px;}
 
 /* ── HERO ── */
 .hero{min-height:100vh;display:flex;align-items:center;justify-content:center;text-align:center;position:relative;overflow:hidden;padding:110px 20px 90px;}
@@ -235,11 +233,6 @@ footer{background:var(--bg2);border-top:1px solid var(--border);padding:52px 40p
 /* ── REVEAL ── */
 .rev{opacity:0;transform:translateY(22px);transition:opacity .65s ease,transform .65s ease;}
 .rev.v{opacity:1;transform:translateY(0);}
-@media(prefers-reduced-motion:reduce){
-  html{scroll-behavior:auto;}
-  *,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important;}
-  .rev{opacity:1;transform:none;}
-}
 
 /* ── MOBILE ── */
 @media(max-width:900px){
@@ -275,10 +268,10 @@ footer{background:var(--bg2);border-top:1px solid var(--border);padding:52px 40p
     <a href="#rules">Rules</a>
     <a href="#staff">Staff</a>
     <a href="#members">Members</a>
-    <a href="https://otakugang.netlify.app/" target="_blank" rel="noopener noreferrer">Website</a>
+    <a href="https://otakugang.netlify.app/" target="_blank">Website</a>
   </div>
-  <a href="https://discord.gg/rJrxsmfudH" target="_blank" rel="noopener noreferrer" class="nd">Join Discord</a>
-  <button class="ham" type="button" aria-label="Toggle navigation" aria-controls="nl" aria-expanded="false" onclick="toggleMenu(this)">
+  <a href="https://discord.gg/rJrxsmfudH" target="_blank" class="nd">Join Discord</a>
+  <button class="ham" onclick="document.getElementById('nl').classList.toggle('open')">
     <span></span><span></span><span></span>
   </button>
 </nav>
@@ -296,12 +289,12 @@ footer{background:var(--bg2);border-top:1px solid var(--border);padding:52px 40p
     <p class="hdesc">More than an SMP — a full community for gamers, otakus, coders and students. Java &amp; Bedrock supported. Crack allowed.</p>
 
     <div class="ips">
-      <div class="pill j" role="button" tabindex="0" aria-label="Copy Java server address" onclick="cp('m1.matrixhosting.in:25573','Java IP copied!')" onkeydown="activateCopy(event,'m1.matrixhosting.in:25573','Java IP copied!')">
+      <div class="pill j" onclick="cp('m1.matrixhosting.in:25573','☕ Java IP Copied!')">
         <div class="pdot"></div>
         <div><span class="plbl">JAVA EDITION — CLICK TO COPY</span>m1.matrixhosting.in:25573</div>
         <span style="opacity:.4;font-size:12px">📋</span>
       </div>
-      <div class="pill b" role="button" tabindex="0" aria-label="Copy Bedrock server address" onclick="cp('m1.matrixhosting.in','Bedrock IP copied!')" onkeydown="activateCopy(event,'m1.matrixhosting.in','Bedrock IP copied!')">
+      <div class="pill b" onclick="cp('m1.matrixhosting.in','📱 Bedrock IP Copied!')">
         <div class="pdot"></div>
         <div><span class="plbl">BEDROCK · PORT 25658 — CLICK TO COPY</span>m1.matrixhosting.in</div>
         <span style="opacity:.4;font-size:12px">📋</span>
@@ -309,8 +302,8 @@ footer{background:var(--bg2);border-top:1px solid var(--border);padding:52px 40p
     </div>
 
     <div class="hbtns">
-      <a href="https://discord.gg/rJrxsmfudH" target="_blank" rel="noopener noreferrer" class="btnd">💬 Join Discord</a>
-      <a href="https://otakugang.netlify.app/" target="_blank" rel="noopener noreferrer" class="btnw">🌐 Our Website</a>
+      <a href="https://discord.gg/rJrxsmfudH" target="_blank" class="btnd">💬 Join Discord</a>
+      <a href="https://otakugang.netlify.app/" target="_blank" class="btnw">🌐 Our Website</a>
     </div>
   </div>
   <div class="sh"><span>SCROLL</span><div class="sa"></div></div>
@@ -322,7 +315,7 @@ footer{background:var(--bg2);border-top:1px solid var(--border);padding:52px 40p
     <div class="si"><span class="sn" >25+</span><span class="sl">Members</span></div>
     <div class="si"><span class="sn" id="s2">0</span><span class="sl">Server Categories</span></div>
     <div class="si"><span class="sn">S2</span><span class="sl">Current Season</span></div>
-    <div class="si"><span class="sn" id="s3">0</span><span class="sl">Anime Channels</span></div>
+    <div class="si"><span class="sn" id="s3">0</span><span class="sl">Anime Club</span></div>
     <div class="si"><span class="sn">24/7</span><span class="sl">Server Online</span></div>
   </div>
 </div>
@@ -398,7 +391,7 @@ footer{background:var(--bg2);border-top:1px solid var(--border);padding:52px 40p
         <span class="sm-icon">☕</span>
         <div class="sm-ed">Java Edition</div>
         <div style="margin-bottom:8px"><div class="sfl">Server Address</div>
-        <div class="sfv" role="button" tabindex="0" onclick="cp('m1.matrixhosting.in:25573','Java IP copied!')" onkeydown="activateCopy(event,'m1.matrixhosting.in:25573','Java IP copied!')">m1.matrixhosting.in:25573 <span>📋</span></div></div>
+        <div class="sfv" onclick="cp('m1.matrixhosting.in:25573','☕ Java IP Copied!')">m1.matrixhosting.in:25573 <span>📋</span></div></div>
         <div><div class="sfl">Version</div>
         <div class="sfv" style="cursor:default">1.21.x Compatible</div></div>
       </div>
@@ -406,16 +399,16 @@ footer{background:var(--bg2);border-top:1px solid var(--border);padding:52px 40p
         <span class="sm-icon">📱</span>
         <div class="sm-ed">Bedrock Edition</div>
         <div style="margin-bottom:8px"><div class="sfl">Server Address</div>
-        <div class="sfv" role="button" tabindex="0" onclick="cp('m1.matrixhosting.in','Bedrock IP copied!')" onkeydown="activateCopy(event,'m1.matrixhosting.in','Bedrock IP copied!')">m1.matrixhosting.in <span>📋</span></div></div>
+        <div class="sfv" onclick="cp('m1.matrixhosting.in','📱 Bedrock IP Copied!')">m1.matrixhosting.in <span>📋</span></div></div>
         <div><div class="sfl">Port</div>
-        <div class="sfv" role="button" tabindex="0" onclick="cp('25658','Port copied!')" onkeydown="activateCopy(event,'25658','Port copied!')">25658 <span>📋</span></div></div>
+        <div class="sfv" onclick="cp('25658','Port Copied!')">25658 <span>📋</span></div></div>
       </div>
     </div>
     <div class="smp-feats rev" style="transition-delay:.1s">
       <div class="sf"><span class="sf-i">🛡️</span><div class="sf-t">Whitelist Only</div></div>
       <div class="sf"><span class="sf-i">🔓</span><div class="sf-t">Crack Allowed</div></div>
       <div class="sf"><span class="sf-i">🚫</span><div class="sf-t">Anti-Cheat</div></div>
-      <div class="sf"><span class="sf-i">🌑</span><div class="sf-t">End Dimension Open</div></div>
+      <div class="sf"><span class="sf-i">🌑</span><div class="sf-t">End Opens Jun 20</div></div>
       <div class="sf"><span class="sf-i">⚔️</span><div class="sf-t">Survival SMP</div></div>
       <div class="sf"><span class="sf-i">🌐</span><div class="sf-t">Java + Bedrock</div></div>
     </div>
@@ -471,7 +464,7 @@ footer{background:var(--bg2);border-top:1px solid var(--border);padding:52px 40p
       <div class="rc rev" style="transition-delay:.3s"><span class="ri">💬</span><div><div class="rt">No Spam</div><div class="rd">Do not spam in any channel or voice chat. Keep conversations clean and useful for everyone.</div></div></div>
       <div class="rc rev" style="transition-delay:.4s"><span class="ri">📦</span><div><div class="rt">Ownership Respect</div><div class="rd">Never take items from others without explicit permission. Always ask before borrowing or trading.</div></div></div>
       <div class="rc rev" style="transition-delay:.5s"><span class="ri">⚖️</span><div><div class="rt">Admin Decisions Final</div><div class="rd">Staff decisions are binding. Raise concerns calmly in Discord with proper evidence.</div></div></div>
-      <div class="rc rev" style="transition-delay:.6s"><span class="ri">🌑</span><div><div class="rt">End Dimension Open</div><div class="rd">The End is open for exploration. Respect shared builds and report glitches to staff instead of exploiting them.</div></div></div>
+      <div class="rc rev" style="transition-delay:.6s"><span class="ri">🌑</span><div><div class="rt">End Dimension Locked</div><div class="rd">The End is closed until June 20, 2026. Entering early results in suspension or jail until June 22.</div></div></div>
       <div class="rc rev" style="transition-delay:.7s"><span class="ri">📱</span><div><div class="rt">Use Correct Channels</div><div class="rd">Post content in the right channel. Gaming content in Gaming Hub, anime in Anime Club, etc.</div></div></div>
     </div>
   </div>
@@ -542,8 +535,8 @@ footer{background:var(--bg2);border-top:1px solid var(--border);padding:52px 40p
       <h2 class="ct">Join OtakuGang</h2>
       <p class="cd">Apply for SMP whitelist, hang out in Community, watch anime together, build projects, grind studies — all in one place.</p>
       <div class="cbs">
-        <a href="https://discord.gg/rJrxsmfudH" target="_blank" rel="noopener noreferrer" class="btnd">Join Discord Server</a>
-        <a href="https://otakugang.netlify.app/" target="_blank" rel="noopener noreferrer" class="btnw">🌐 Visit Website</a>
+        <a href="https://discord.gg/rJrxsmfudH" target="_blank" class="btnd">Join Discord Server</a>
+        <a href="https://otakugang.netlify.app/" target="_blank" class="btnw">🌐 Visit Website</a>
       </div>
     </div>
   </div>
@@ -553,10 +546,10 @@ footer{background:var(--bg2);border-top:1px solid var(--border);padding:52px 40p
 <footer>
   <div class="fi">
     <div class="fb">OTAKUGANG</div>
-    <div class="fs">⚔️ Season 2 — 2026 · 13 Players Whitelisted</div>
+    <div class="fs">⚔️ Season 2 — 2026 · 22 Members Strong</div>
     <div class="fl">
-      <a href="https://discord.gg/rJrxsmfudH" target="_blank" rel="noopener noreferrer">Discord</a>
-      <a href="https://otakugang.netlify.app/" target="_blank" rel="noopener noreferrer">Website</a>
+      <a href="https://discord.gg/rJrxsmfudH" target="_blank">Discord</a>
+      <a href="https://otakugang.netlify.app/" target="_blank">Website</a>
       <a href="#hubs">Server Hubs</a>
       <a href="#smp">SMP</a>
       <a href="#gallery">Gallery</a>
@@ -574,23 +567,14 @@ footer{background:var(--bg2);border-top:1px solid var(--border);padding:52px 40p
 // Animated canvas — sakura petals + MC blocks + stars
 const cv=document.getElementById('cvs');
 const cx=cv.getContext('2d');
-const reducedMotion=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-function resizeCanvas(){
-  const ratio=Math.min(window.devicePixelRatio||1,2);
-  cv.width=window.innerWidth*ratio;
-  cv.height=window.innerHeight*ratio;
-  cv.style.width=window.innerWidth+'px';
-  cv.style.height=window.innerHeight+'px';
-  cx.setTransform(ratio,0,0,ratio,0,0);
-}
-resizeCanvas();
-window.addEventListener('resize',resizeCanvas);
+cv.width=window.innerWidth;cv.height=window.innerHeight;
+window.addEventListener('resize',()=>{cv.width=window.innerWidth;cv.height=window.innerHeight;});
 
 const particles=[];
 const types=['star','sakura','block'];
 const colors=['rgba(168,85,247,0.4)','rgba(244,114,182,0.3)','rgba(74,222,128,0.25)','rgba(251,191,36,0.2)','rgba(255,255,255,0.15)'];
 
-for(let i=0;i<(reducedMotion?20:80);i++){
+for(let i=0;i<80;i++){
   const t=types[Math.floor(Math.random()*types.length)];
   particles.push({
     x:Math.random()*cv.width,y:Math.random()*cv.height,
@@ -631,7 +615,6 @@ function drawBlock(x,y,s,c){
 }
 
 function anim(){
-  if(reducedMotion)return;
   cx.clearRect(0,0,cv.width,cv.height);
   particles.forEach(p=>{
     p.y-=p.speed;p.x+=p.drift;p.angle+=p.angleSpeed;
@@ -648,60 +631,19 @@ anim();
 
 // Navbar scroll
 window.addEventListener('scroll',()=>document.getElementById('nav').classList.toggle('s',scrollY>60));
-function toggleMenu(button){
-  const menu=document.getElementById('nl');
-  const open=menu.classList.toggle('open');
-  button.setAttribute('aria-expanded',String(open));
-}
-document.querySelectorAll('#nl a').forEach(link=>link.addEventListener('click',()=>{
-  const menu=document.getElementById('nl');
-  const button=document.querySelector('.ham');
-  menu.classList.remove('open');
-  button.setAttribute('aria-expanded','false');
-}));
 
 // Reveal
-if('IntersectionObserver' in window){
-  const obs=new IntersectionObserver(e=>e.forEach(x=>{if(x.isIntersecting)x.target.classList.add('v');}),{threshold:.07});
-  document.querySelectorAll('.rev').forEach(el=>obs.observe(el));
-}else{
-  document.querySelectorAll('.rev').forEach(el=>el.classList.add('v'));
-}
+const obs=new IntersectionObserver(e=>e.forEach(x=>{if(x.isIntersecting)x.target.classList.add('v');}),{threshold:.07});
+document.querySelectorAll('.rev').forEach(el=>obs.observe(el));
 
 // Copy
-async function cp(txt,msg){
-  try{
-    if(navigator.clipboard&&window.isSecureContext){
-      await navigator.clipboard.writeText(txt);
-    }else{
-      const fallback=document.createElement('textarea');
-      fallback.value=txt;
-      fallback.setAttribute('readonly','');
-      fallback.style.position='fixed';
-      fallback.style.opacity='0';
-      document.body.appendChild(fallback);
-      fallback.select();
-      const copied=document.execCommand('copy');
-      fallback.remove();
-      if(!copied)throw new Error('Copy command failed');
-    }
-  }catch(error){
-    showToast('Copy failed — please select the address');
-    console.error('Unable to copy server address:',error);
-    return;
-  }
-  showToast('✓ '+msg);
-}
-function showToast(message){
+function cp(txt,msg){
+  navigator.clipboard.writeText(txt).catch(()=>{
+    const t=document.createElement('textarea');t.value=txt;document.body.appendChild(t);t.select();document.execCommand('copy');document.body.removeChild(t);
+  });
   const t=document.getElementById('toast');
-  t.textContent=message;t.classList.add('show');
+  t.textContent='✓ '+msg;t.classList.add('show');
   setTimeout(()=>t.classList.remove('show'),2600);
-}
-function activateCopy(event,txt,msg){
-  if(event.key==='Enter'||event.key===' '){
-    event.preventDefault();
-    cp(txt,msg);
-  }
 }
 
 // Counters
@@ -709,20 +651,10 @@ function count(id,to,suffix=''){
   const el=document.getElementById(id);if(!el)return;let c=0;
   const iv=setInterval(()=>{c=Math.min(c+1,to);el.textContent=c+suffix;if(c>=to)clearInterval(iv);},60);
 }
-if('IntersectionObserver' in window){
-  const so=new IntersectionObserver(e=>{
-    e.forEach(x=>{if(x.isIntersecting){count('s2',7);count('s3',5,'+');so.disconnect();}});
-  },{threshold:.5});
-  so.observe(document.getElementById('statsB'));
-}else{
-  count('s2',7);
-  count('s3',5,'+');
-}
-
-document.querySelectorAll('img').forEach(image=>image.addEventListener('error',()=>{
-  image.alt='Image unavailable';
-  image.style.background='linear-gradient(135deg,#16102b,#0c0917)';
-}));
+const so=new IntersectionObserver(e=>{
+  e.forEach(x=>{if(x.isIntersecting){count('s1',13);count('s2',7);count('s3',5,'+ Anime Chans');so.disconnect();}});
+},{threshold:.5});
+so.observe(document.getElementById('statsB'));
 </script>
 </body>
 </html>
