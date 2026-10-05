@@ -252,3 +252,7 @@ If you want to reuse or redistribute parts of the project, please contact the pr
 <p align="center">
   <strong>🎮 Play Fair • Have Fun • Stay Connected</strong>
 </p>
+
+<p align="center">
+  Made with ❤️ for the OtakuGang community.
+</p>
